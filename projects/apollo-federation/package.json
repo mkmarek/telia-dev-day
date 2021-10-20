@@ -1,0 +1,21 @@
+{
+  "name": "apollo-federation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently --kill-others \"node orders/index.js\" \"node products/index.js\" \"node federation/index.js\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/gateway": "^0.42.3",
+    "@apollo/subgraph": "^0.1.2",
+    "apollo-server": "^3.3.0",
+    "graphql": "^15.6.0",
+    "pg": "^8.7.1"
+  },
+  "devDependencies": {
+    "concurrently": "^6.3.0"
+  }
+}

@@ -1,0 +1,45 @@
+scalar UUID
+
+type CreateUserOrderPayload {
+  userOrder: UserOrder
+}
+
+input CreateUserOrderInput {
+  userOrder: UserOrderInput!
+}
+
+input UserOrderInput {
+  id: UUID
+}
+
+type UserOrder {
+  id: UUID!
+}
+
+input CreateOrderItemInput {
+  orderItem: OrderItemInput!
+}
+
+input OrderItemInput {
+  orderId: UUID!
+  productId: Int!
+}
+
+type CreateOrderItemPayload {
+  orderItem: OrderItem
+}
+
+type OrderItem {
+  orderId: UUID!
+  productId: Int!
+}
+
+type Mutation {
+    createUserOrder(
+    input: CreateUserOrderInput!
+  ): CreateUserOrderPayload
+
+  createOrderItem(
+    input: CreateOrderItemInput!
+  ): CreateOrderItemPayload
+}

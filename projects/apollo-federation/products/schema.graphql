@@ -1,0 +1,44 @@
+type Query {
+  allCategories: CategoriesConnection
+  allManufacturers: ManufacturersConnection
+  allProducts(condition: ProductCondition): ProductsConnection
+  productById(id: Int!): Product
+}
+
+type CategoriesConnection {
+  nodes: [Category]!
+}
+
+type Category {
+  id: Int!
+  name: String!
+  description: String
+}
+
+type ManufacturersConnection {
+  nodes: [Manufacturer]!
+}
+
+type Manufacturer {
+  id: Int!
+  name: String!
+  description: String
+}
+
+input ProductCondition {
+  categoryId: Int
+  manufacturerId: Int
+}
+
+type ProductsConnection {
+  nodes: [Product]!
+}
+
+type Product {
+  id: Int!
+  name: String!
+  description: String
+  categoryId: Int
+  manufacturerId: Int
+  categoryByCategoryId: Category
+}

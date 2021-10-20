@@ -1,0 +1,25 @@
+{
+  "name": "telia-dev-day",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "lerna exec -- npm start",
+    "bootstrap": "lerna bootstrap",
+    "clean": "lerna clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkmarek/telia-dev-day.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mkmarek/telia-dev-day/issues"
+  },
+  "homepage": "https://github.com/mkmarek/telia-dev-day#readme",
+  "dependencies": {
+    "concurrently": "^6.3.0",
+    "lerna": "^4.0.0"
+  }
+}

@@ -1,0 +1,10 @@
+{
+    "packages": [
+      "projects/database-slaparound",
+      "projects/apollo-single-app",
+      "projects/apollo-federation",
+      "projects/hitch-a-ride",
+      "presentation"
+    ],
+    "version": "0.0.0"
+  }

@@ -22,7 +22,15 @@
         <section>
           <section>
             <h1>GraphQL</h1>
-            <small>Backends, tools and things</small>
+            <small>Writting backends</small>
+          </section>
+          <section>
+            <h2>What we won't cover</h2>
+            <ul>
+              <li>Querying basics</li>
+              <li>Client implementation</li>
+              <li>Realtime communication with subscriptions</li>
+            </ul>
           </section>
         </section>
         <section>
@@ -123,6 +131,54 @@
               <li>Schema definition language</li>
             </ul>
           </section>
+          <section>
+            <h2>Nodes? Edges? What?</h2>
+            <a href="https://relay.dev/graphql/connections.htm">https://relay.dev/graphql/connections.htm</a>
+            <blockquote>
+              This specification aims to provide an option for GraphQL clients to consistently handle pagination best practices with support for related metadata via a GraphQL server. This spec proposes calling this pattern “Connections” and exposing them in a standardized way.
+            </blockquote>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>So... how to build a graphql server?</h2>
+          </section>
+          <section>
+            <h2>A database wraparound</h2>
+          </section>
+          <section>
+            <h3>Databases with graphql support</h3>
+            <ul>
+              <li>Dgraph</li>
+              <li>EdgeDB</li>
+              <li>FaunaDB</li>
+              <li>ArangoDB</li>
+              <li>Weaviate</li>
+              <li>Back4App</li>
+            </ul>
+            <br />
+            <a href="https://github.com/chentsulin/awesome-graphql#databases">Source</a>
+          </section>
+          <section>
+            <h2>Example with Postgres and postgraphile</h2>
+            <a href="https://www.graphile.org/postgraphile/">https://www.graphile.org/postgraphile/</a>
+          </section>
+          <section>
+            <h2>A single apollo server</h2>
+            <img src="media/apoll-server.png">
+          </section>
+          <section>
+            <h2>More apollo servers</h2>
+            With apollo federation
+            <img src="media/apoll-federation.png">
+          </section>
+          <section>
+            <h2>AWS appsync</h2>
+            <img src="media/appsync.png">
+          </section>
+        </section>
+        <section>
+          <h2>Questions?</h2>
         </section>
       </div>
     </div>

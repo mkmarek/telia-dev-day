@@ -1,0 +1,11 @@
+{
+  "name": "database-slaparound",
+  "version": "1.0.0",
+  "description": "Example of creating a schema in PostgreSQL database with an instant GraphQL schema",
+  "main": "index.js",
+  "scripts": {
+    "start": "docker-compose -f stack.yml up"
+  },
+  "author": "",
+  "license": "ISC"
+}
