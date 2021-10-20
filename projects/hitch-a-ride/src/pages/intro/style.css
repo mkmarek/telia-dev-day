@@ -1,0 +1,24 @@
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+
+    min-height: 100vh;
+}
+
+.intro__heading {
+    text-align: center;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+.intro__heading-box {
+    align-self: center;
+    text-align: center;
+}
+
+.intro__button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

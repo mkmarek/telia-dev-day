@@ -1,0 +1,45 @@
+.catalogue {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+}
+
+.catalogue__filters {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.catalogue__filter {
+    margin: 15px;
+}
+
+.catalogue__filter-text {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.catalogue__content {
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+
+    align-content: center;
+    justify-content: center;
+}
+
+.catalogue__item {
+    width: 340px;
+    margin: 15px;
+}
+
+.catalogue__quote {
+    margin-left: 30px;
+    margin-right: 30px;
+    align-self: center;
+}

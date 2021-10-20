@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <section>
+            <h1>GraphQL</h1>
+            <small>Backends, tools and things</small>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>The problem</h1>
+          </section>
+          <section>
+            <img src="/media/shoe-shop.png" />
+          </section>
+          <section>
+            Number of requests: 1 + N
+            <pre><code data-trim>
+/api/products
+/api/product/[1..N]/comments
+
+</code></pre>
+          </section>
+          <section>
+            <img
+              style="max-height: 30%; max-width: 50%"
+              src="/media/shoe-shop-2.png"
+            />
+          </section>
+          <section>
+            Number of requests: 2 + N + M
+            <pre><code data-trim>
+/api/products?group=top
+/api/product/[1..N]/comments
+
+/api/products?group=latest
+/api/product/[1..M]/comments
+
+</code></pre>
+          </section>
+          <section>
+            <img
+              style="max-height: 30%; max-width: 50%"
+              src="/media/shoe-shop-3.png"
+            />
+          </section>
+          <section>
+            Number of requests: 2 + 2 * (N + M)
+            <pre><code data-trim>
+/api/products?group=top
+/api/product/[1..N]/comments
+/api/product/[1..N]/variants
+
+/api/products?group=latest
+/api/product/[1..M]/comments
+/api/product/[1..M]/variants
+
+</code></pre>
+          </section>
+          <section>
+            <table>
+              <thead>
+                <tr>
+                  <th>Products per group</th>
+                  <th>Total requests</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>5</td>
+                  <td>22</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>42</td>
+                </tr>
+                <tr>
+                  <td>20</td>
+                  <td>82</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section>
+            <h4>Why do you fragment api data that much?</h4>
+            <p>Just let /api/products?group=??? return everything</p>
+          </section>
+          <section>
+            <h4>Underfetching and overfetching</h4>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>The graphql way</h2>
+            <img style="width: 80%" src="/media/the-graphql-way.png" />
+          </section>
+          <section>
+            <img style="width: 80%" src="/media/request.png" />
+          </section>
+          <section>
+            <h2>GraphQL language</h2>
+            <ul>
+              <li>Query definition language</li>
+              <li>Schema definition language</li>
+            </ul>
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>

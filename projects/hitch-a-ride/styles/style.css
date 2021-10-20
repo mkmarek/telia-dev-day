@@ -1,0 +1,7 @@
+#app {
+    background-image: url("../media/background.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+
+    min-height: 100vh;
+}

@@ -1,0 +1,33 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    container_name: psql
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: example
+
+  adminer:
+    image: adminer
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - 8080:8080
+
+  postgraphile:
+    image: graphile/postgraphile
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - 5000:5000
+    environment:
+      DATABASE_URL: postgres://postgres:example@psql:5432/postgres
+      OWNER_DATABASE_URL: postgres://postgres:example@psql:5432/postgres
+    command: ["--watch", "--enhance-graphiql", "--cors"]
